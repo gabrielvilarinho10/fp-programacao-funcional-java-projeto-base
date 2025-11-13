@@ -31,8 +31,8 @@ public class Aula06 extends Aula {
      */
     private final Predicate<Estudante> mulheresAprovadas =
             e -> e.getSexo() == 'F'
-                    && e.getCurso() != null
-                    && e.getNota() >= 6;
+            && e.getCurso() != null
+            && e.getNota() >= 6;
 
     /**
      * Você pode chamar os métodos existentes e outros que você criar aqui,
