@@ -27,6 +27,7 @@ public class LazyIteration {
         System.out.printf("Java -> Soma: %d Tamanho da Lista: %d\n", soma, numeros.size());
     }
 
+    @SuppressWarnings("unused")
     private List<Integer> getRandomList(final int quant) {
         final var numeros = new ArrayList<Integer>(quant);
         for (int i = 0; i < quant; i++) {

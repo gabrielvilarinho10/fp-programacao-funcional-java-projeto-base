@@ -22,7 +22,8 @@ public class AppProgramacaoFuncional {
     private final List<Estudante> estudantes = new StudentGenerator().generate(TOTAL_ESTUDANTES);
 
     public AppProgramacaoFuncional() {
-
+        // Estudantes gerados aleatoriamente para experimentação
+        estudantes.forEach(System.out::println);
     }
 
     public static void main(String[] args) {

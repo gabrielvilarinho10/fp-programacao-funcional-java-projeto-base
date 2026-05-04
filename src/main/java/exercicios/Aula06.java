@@ -5,6 +5,7 @@ import exercicios.base.Aula;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.Comparator;
+import java.util.stream.Collectors;
 
 /**
  * Esta é uma classe para você poder implementar as atividades propostas no README.
@@ -30,9 +31,9 @@ public class Aula06 extends Aula {
      * Você deve trocar o valor armazenado ao atributo para ele seguir a regra definida acima.
      */
     private final Predicate<Estudante> mulheresAprovadas =
-            e -> e.getSexo() == 'F'
-            && e.getCurso() != null
-            && e.getNota() >= 6;
+            ((Predicate<Estudante>) e -> e.getSexo() == 'F')
+            .and(e -> e.getCurso() != null)
+            .and(e -> e.getNota() >= 6);
 
     /**
      * Você pode chamar os métodos existentes e outros que você criar aqui,
@@ -82,9 +83,7 @@ public class Aula06 extends Aula {
     public List<Estudante> getEstudantesMulheresAprovadasNaoOrdenadasModificavel() {
         return estudantes.stream()
                 .filter(mulheresAprovadas)
-                .toList()         // cria lista não-modificável
-                .stream()
-                .toList();        // converte para lista modificável (Java 16+)
+                .collect(Collectors.toList()); // lista modificável
     }
 
     public List<Estudante> getEstudantesMulheresAprovadasOrdenadasTotalmenteDecrescente() {
