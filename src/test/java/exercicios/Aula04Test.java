@@ -1,6 +1,6 @@
 package exercicios;
 
-import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.stream.Stream;
@@ -8,13 +8,8 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Aula04Test {
-    private Aula04 instance = new Aula04();
-    private Curso cursoMatematica;
-
-    @BeforeEach
-    void setUp() {
-        cursoMatematica = instance.generator.CURSOS[3];
-    }
+    private final Aula04 instance = new Aula04();
+    private final Curso cursoMatematica = instance.generator.CURSOS[3];
 
     @Test
     void maiorNotaTodosEstudantes() {
